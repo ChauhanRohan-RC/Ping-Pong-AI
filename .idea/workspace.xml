@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6765a952-7679-4c13-b185-abe1076a5945" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2CsoBLE8hfXgCfWS2ftB1OAi2p0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\RC\Projects\Pycharm\PingPong\config" />
+      <recent name="D:\RC\Projects\Pycharm\PingPong" />
+      <recent name="D:\RC\Projects\Pycharm\PingPong\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.pong_client">
+    <configuration name="pong_client" type="PythonConfigurationType" factoryName="Python" singleton="false" nameIsGenerated="true">
+      <module name="PingPong" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\RC\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pong_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pong_server" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PingPong" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\RC\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pong_server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="PingPong" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\RC\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.pong_client" />
+      <item itemvalue="Python.pong_server" />
+      <item itemvalue="Python.test" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6765a952-7679-4c13-b185-abe1076a5945" name="Default Changelist" comment="" />
+      <created>1659600517513</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659600517513</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1659764866141">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1659764866141" />
+    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1659962020033">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1659962020033" />
+    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1659846184564">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.816@0.0.1536.816" timestamp="1659846184564" />
+    <state x="538" y="141" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1659641351662">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="538" y="141" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1536.816@0.0.1536.816" timestamp="1659641351662" />
+    <state x="548" y="163" key="FileChooserDialogImpl" timestamp="1659764863099">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="548" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1659764863099" />
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom" timestamp="1660398996660">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="2" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1660398996660" />
+    <state width="1515" height="2" key="GridCell.Tab.0.center" timestamp="1660398996660">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="2" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1660398996660" />
+    <state width="1515" height="2" key="GridCell.Tab.0.left" timestamp="1660398996660">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="2" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1660398996660" />
+    <state width="1515" height="2" key="GridCell.Tab.0.right" timestamp="1660398996660">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="2" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1660398996660" />
+    <state width="1515" height="258" key="GridCell.Tab.1.bottom" timestamp="1659704420906">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1659704420906" />
+    <state width="1515" height="258" key="GridCell.Tab.1.center" timestamp="1659704420906">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1659704420906" />
+    <state width="1515" height="258" key="GridCell.Tab.1.left" timestamp="1659704420906">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1659704420906" />
+    <state width="1515" height="258" key="GridCell.Tab.1.right" timestamp="1659704420906">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1515" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1659704420906" />
+    <state x="277" y="51" key="SettingsEditor" timestamp="1659795674255">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="277" y="51" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1659795674255" />
+    <state x="431" y="137" width="672" height="678" key="search.everywhere.popup" timestamp="1661572028243">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="431" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816@0.0.1536.816" timestamp="1661572028243" />
+  </component>
+</project>
