@@ -14,11 +14,15 @@ print("\n")
 
 
 def create_fullscreen_display() -> pygame.Surface:
-    return pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    _win = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    pygame.display.set_caption(DISPLAY_TITLE)
+    return _win
 
 
 def create_non_fullscreen_display(_size: tuple) -> pygame.Surface:
-    return pygame.display.set_mode(_size, pygame.RESIZABLE)
+    _win = pygame.display.set_mode(_size, pygame.RESIZABLE)
+    pygame.display.set_caption(DISPLAY_TITLE)
+    return _win
 
 
 def update_exit_button_pos(button, win_width, win_height):
@@ -170,7 +174,7 @@ if DEFAULT_FULLSCREEN:
     win = create_fullscreen_display()
 else:
     win = create_non_fullscreen_display((DEFAULT_W_WIDTH, DEFAULT_W_HEIGHT))
-pygame.display.set_caption(DISPLAY_TITLE)
+
 clock = pygame.time.Clock()  # Main loop clock
 # db_clock = pygame.time.Clock()  # double click timer clock
 
