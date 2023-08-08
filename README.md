@@ -1,7 +1,12 @@
-# Ping-Pong Online Multiplayer  
-(RC @Aug 9, 2022)
+# Ping-Pong Online Multiplayer AI
 
-#### An Online Multiplayer Ping-Pong game
+#### An Online Multiplayer Ping-Pong game with NEAT-AI in python
+
+##### [Demo on Youtube](https://youtu.be/KYO4i3YMgJk)
+###### See also 
+[3D N*N Rubik's Cube solver-AI](https://github.com/ChauhanRohan-RC/Cube.git)  
+[Fourier Series Simulation](https://github.com/ChauhanRohan-RC/Fourier-Series.git)  
+[RSA Encryptor](https://github.com/ChauhanRohan-RC/RSA-Encryptor.git)
 
 ![Home Screen](graphics/home_screen.png?raw=true)
 
@@ -46,14 +51,8 @@ This command uses `config/client_net_config.ini` as a fallback in case the serve
 
 ![Online Multiplayer Result](graphics/online_multiplayer_result.png?raw=true)
 
-## Demo
-Youtube: https://youtu.be/KYO4i3YMgJk
-
-## See Also
-Sudoku Game with solver: https://github.com/ChauhanRohan-RC/Sudoku
-
-## Social Media
-Twitter: https://twitter.com/0rc_studio
-Youtube: https://www.youtube.com/channel/UCmyvutGWtyBRva_jrZfyORA
-Play Store: https://play.google.com/store/apps/dev?id=7315303590538030232  
+## Connect on
+[Twitter](https://twitter.com/0rc_studio)  
+[Youtube](https://www.youtube.com/channel/UCmyvutGWtyBRva_jrZfyORA)  
+[Google Play Store](https://play.google.com/store/apps/dev?id=7315303590538030232)  
 E-mail: com.production.rc@gmail.com
