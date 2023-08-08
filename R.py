@@ -74,7 +74,7 @@ USER_NAME_LOCAL = get_user_name(default_user_name=DEFAULT_USER_NAME)
 # Main Vars
 DEFAULT_W_WIDTH, DEFAULT_W_HEIGHT = 1244, 700
 DEFAULT_FULLSCREEN = True
-FPS = 60
+FPS = 240
 WINNING_SCORE = 10
 
 DISPLAY_TITLE_PART1 = "Ping"
@@ -119,9 +119,9 @@ MSG_ENEMY_LEFT_CAPTION = "Press ENTER to continue"
 TITLE_CONTROLS = "CONTROLS"
 DES_CONTROLS = "Player 1 : UP-DOWN\nPlayer 2 : W-S\nPause : Space\nExit : Escape\nSound : Ctrl-A\nFullscreen : Ctrl-F"
 
-OFFLINE_MULTIPLAYER_PLAYER1_NAME = "Player 1"
-OFFLINE_MULTIPLAYER_PLAYER2_NAME = "Player 2"
-OFFLINE_SINGLEPLAER_AI_NAME = "Computer"
+OFFLINE_MULTI_PLAYER_PLAYER1_NAME = "Player 1"
+OFFLINE_MULTI_PLAYER_PLAYER2_NAME = "Player 2"
+OFFLINE_SINGLE_PLAYER_AI_NAME = "AI"
 DEFAULT_ENEMY_NAME = "Opponent"
 
 
@@ -177,7 +177,7 @@ def __get_won_msg_cap(player_name: str, score_diff: int, won: bool) -> str:
 
 
 def __get_won_display_info_offline_single_player(self_won: bool, score_diff: int, enemy_name: str = '') -> tuple:
-    _enemy_name = enemy_name if enemy_name else OFFLINE_SINGLEPLAER_AI_NAME
+    _enemy_name = enemy_name if enemy_name else OFFLINE_SINGLE_PLAYER_AI_NAME
     if self_won:
         won_msg = MSG_WON_SELF
         col = COLOR_MSG_WON_SELF
@@ -191,12 +191,12 @@ def __get_won_display_info_offline_single_player(self_won: bool, score_diff: int
 
 def __get_won_display_info_offline_multiplayer(self_won: bool, score_diff: int, enemy_name: str = '') -> tuple:
     if self_won:
-        won_name = OFFLINE_MULTIPLAYER_PLAYER1_NAME
-        lost_name = OFFLINE_MULTIPLAYER_PLAYER2_NAME
+        won_name = OFFLINE_MULTI_PLAYER_PLAYER1_NAME
+        lost_name = OFFLINE_MULTI_PLAYER_PLAYER2_NAME
         col = COLOR_MSG_WON_SELF
     else:
-        won_name = OFFLINE_MULTIPLAYER_PLAYER2_NAME
-        lost_name = OFFLINE_MULTIPLAYER_PLAYER1_NAME
+        won_name = OFFLINE_MULTI_PLAYER_PLAYER2_NAME
+        lost_name = OFFLINE_MULTI_PLAYER_PLAYER1_NAME
         col = COLOR_MSG_WON_ENEMY
 
     won_msg = f"{won_name} won!"
@@ -226,7 +226,7 @@ def get_enemy_name_status(name):
 
 
 def get_ai_name_status(ai_efficiency_percent: int):
-    return f"{OFFLINE_SINGLEPLAER_AI_NAME} ({ai_efficiency_percent}%)"
+    return f"{OFFLINE_SINGLE_PLAYER_AI_NAME} ({ai_efficiency_percent}%)"
 
 
 # Home Screen
@@ -303,6 +303,7 @@ PADDLE_REL_VEL = 0.01
 # Ball
 BALL_DEFAULT_REL_RADIUS = 0.0075
 BALL_DEFAULT_REL_VEl_MAX_COMPONENT = 0.0075
+BALL_DEFAULT_REL_VEl_MIN_COMPONENT_FACTOR = 0.66
 BALL_DEFAULT_RESET_DELAY_SECS = 2
 BALL_DEFAULT_RANDOM_INITIAL_VEL_ENABLED = True
 # BALL_VEl_TOTAL_MAX = ceil(1.4143 * BALL_VEl_COMPONENT_MAX)

@@ -1,6 +1,8 @@
 import random
 import pygame
 import math
+
+import U
 from R import *
 from U import lerp, line_line_intersection, get_ball_initial_rel_vel, to_rel, to_abs
 from DifficultyLevel import DifficultyLevel
@@ -240,17 +242,12 @@ class Paddle(BaseGameObject):
         if up:
             _final = self.rely - self._rel_vel
             _min = self.rely_min(rel_pady=rel_pady)
-            if _final > _min:
-                self.rely = _final
-            else:
-                self.rely = _min
+            self.rely = max(_min, _final)
         else:
             _final = self.rely + self._rel_vel
             _max = self.rely_max(rel_pady=rel_pady)
-            if _final < _max:
-                self.rely = _final
-            else:
-                self.rely = _max
+            self.rely = min(_max, _final)
+
         # self.move_by((-1 if up else 1) * self.vel)
 
     def reset(self):
@@ -272,12 +269,15 @@ class Ball(BaseGameObject):
     @classmethod
     def create(cls, win_getter, difficulty: DifficultyLevel):
         return cls(win_getter=win_getter, relx=0.5, rely=0.5,
-                   rel_radius=difficulty.ball_rel_radius, rel_vel_max_component=difficulty.ball_rel_vel_max_component,
+                   rel_radius=difficulty.ball_rel_radius,
+                   rel_vel_max_component=difficulty.ball_rel_vel_max_component,
+                   x_vel_min_factor=difficulty.ball_x_vel_min_factor,
                    random_initial_vel_enabled=difficulty.ball_random_initial_vel_enabled)
 
     def __init__(self, win_getter, relx: float = 0.5, rely: float = 0.5,
                  rel_radius: float = BALL_DEFAULT_REL_RADIUS,
                  rel_vel_max_component: float = BALL_DEFAULT_REL_VEl_MAX_COMPONENT,
+                 x_vel_min_factor: float = BALL_DEFAULT_REL_VEl_MIN_COMPONENT_FACTOR,
                  random_initial_vel_enabled: bool = BALL_DEFAULT_RANDOM_INITIAL_VEL_ENABLED,
                  color: pygame.Color = COLOR_BALL):
         super(Ball, self).__init__(win_getter, relx, rely)
@@ -285,6 +285,7 @@ class Ball(BaseGameObject):
         self.color = color
 
         self.rel_vel_max_component = rel_vel_max_component
+        self.x_vel_min_factor = x_vel_min_factor
         self.random_initial_vel_enabled = random_initial_vel_enabled
         self.rel_velx, self.rel_vely = 0, 0
         self.reset_vel()
@@ -316,7 +317,8 @@ class Ball(BaseGameObject):
 
     def reset_vel(self):
         self.rel_velx, self.rel_vely = get_ball_initial_rel_vel(rel_vel_max_component=self.rel_vel_max_component,
-                                                                _random=self.random_initial_vel_enabled)
+                                                                _random=self.random_initial_vel_enabled,
+                                                                x_vel_min_factor=self.x_vel_min_factor)
 
     def reset(self):
         super(Ball, self).reset()
@@ -434,8 +436,8 @@ class GameState:
 
     def server_dump_all_coords(self) -> str:
         return self.dump_paddle_coords(left=True) + GAME_STATE_DELIMITER2 + \
-               self.dump_paddle_coords(left=False) + GAME_STATE_DELIMITER2 + \
-               self.dump_ball_coords()
+            self.dump_paddle_coords(left=False) + GAME_STATE_DELIMITER2 + \
+            self.dump_ball_coords()
 
     def client_load_all_coords(self, s: str, self_left: bool):
         d = s.split(GAME_STATE_DELIMITER2)
@@ -495,7 +497,7 @@ class GameState:
     _s_rand_err_choice_index = 0
 
     @classmethod
-    def ai_should_not_make_mistake(cls, ai_efficiency_percent: int) -> bool:
+    def should_ai_make_mistake(cls, ai_efficiency_percent: int) -> bool:
         if not cls._s_rand_err_choices:
             cls._s_rand_err_choices = random.choices(list(range(1, 101)), k=100)
 
@@ -503,39 +505,82 @@ class GameState:
         cls._s_rand_err_choice_index += 1
         if cls._s_rand_err_choice_index == len(cls._s_rand_err_choices):
             cls._s_rand_err_choice_index = 0  # reset
-        return choice <= ai_efficiency_percent
+        return choice > ai_efficiency_percent
+
+    # def ai_handle_player(self, left: bool):
+    #     paddle = self.get_paddle(left)
+    #     # enemy = self.get_paddle(not left)
+    #
+    #     tu = line_line_intersection(to_abs(paddle.relx), to_abs(paddle.rely), to_abs(paddle.relx2), to_abs(paddle.rely2),
+    #                                 to_abs(self.ball.relx), to_abs(self.ball.rely),
+    #                                 to_abs(self.ball.relx + self.ball.rel_velx),
+    #                                 to_abs(self.ball.rely + self.ball.rel_vely), False, False)
+    #
+    #     # print(f"AI intersections: {tu}")
+    #     if tu and tu[1] > 0:  # if ball is directly heading towards paddle
+    #         collision_point_y = int(lerp(to_abs(paddle.rely), to_abs(paddle.rely2), tu[0]))
+    #         center_y = to_abs(paddle.center_rely)
+    #         dy = collision_point_y - center_y
+    #         if abs(dy) > to_abs((paddle.rel_height / 2) - paddle.rel_vel):
+    #             move_up = dy < 0
+    #             # i = random.choices(range(1, 101))            # todo amp error probability
+    #             # make_mistake = i <= self.difficulty.ai_error_probability
+    #             #
+    #             # # Strategy 1 (do not move at all)
+    #             # if not make_mistake:
+    #             #     paddle.move(up=move_up)
+    #             #
+    #             # # # Strategy 2 (move in opposite direction)
+    #             # # if make_mistake:
+    #             # #     move_up = not move_up
+    #             # # paddle.move(up=move_up)
+    #
+    #             make_mistake = self.should_ai_make_mistake(self.difficulty.ai_efficiency_percent)
+    #             if not make_mistake:
+    #                 paddle.move(up=move_up)
 
     def ai_handle_player(self, left: bool):
-        me = self.get_paddle(left)
+        paddle = self.get_paddle(left)
         # enemy = self.get_paddle(not left)
 
-        tu = line_line_intersection(to_abs(me.relx), to_abs(me.rely), to_abs(me.relx2), to_abs(me.rely2),
+        # Intersect the entire Paddle Y-axis with the trajectory of the ball
+        tu = line_line_intersection(to_abs(paddle.relx), to_abs(0), to_abs(paddle.relx2), to_abs(1),
                                     to_abs(self.ball.relx), to_abs(self.ball.rely),
                                     to_abs(self.ball.relx + self.ball.rel_velx),
                                     to_abs(self.ball.rely + self.ball.rel_vely), False, False)
 
-        # print(f"AI intersections: {tu}")
-        if tu and tu[1] > 0:  # if ball is directly heading towards me
-            collision_point_y = int(lerp(to_abs(me.rely), to_abs(me.rely2), tu[0]))
-            center_y = to_abs(me.center_rely)
-            dy = collision_point_y - center_y
-            if abs(dy) > to_abs((me.rel_height / 2) - me.rel_vel):
-                move_up = dy < 0
-                # i = random.choices(range(1, 101))            # todo amp error probability
-                # make_mistake = i <= self.difficulty.ai_error_probability
-                #
-                # # Strategy 1 (do not move at all)
-                # if not make_mistake:
-                #     me.move(up=move_up)
-                #
-                # # # Strategy 2 (move in opposite direction)
-                # # if make_mistake:
-                # #     move_up = not move_up
-                # # me.move(up=move_up)
+        if not tu or tu[1] < 0:  # ball moving || to Y-axis or going away from the paddle
+            return
 
-                good = self.ai_should_not_make_mistake(self.difficulty.ai_efficiency_percent)
-                if good:
-                    me.move(up=move_up)
+        move_dir = -1  # -1: do not move, 0: down, 1: up
+
+        t = tu[0]
+        if U.outside01(t):
+            # ball will collide with top/bottom wall, so just flip the collision point about the x-axis
+            if t < 0:  # t < 0: Top wall
+                t = abs(t)
+            else:  # t > 1: Bottom wall
+                t = 2 - t
+        else:
+            # ball will directly hit the paddle
+            pass
+
+        collision_point_y = int(lerp(to_abs(0), to_abs(1), t))
+        center_y = to_abs(paddle.center_rely)
+        dy = collision_point_y - center_y
+
+        if abs(dy) > to_abs((paddle.rel_height / 2) - paddle.rel_vel):
+            move_dir = 1 if dy < 0 else 0
+        else:
+            move_dir = -1  # do not move at all
+
+        if move_dir < 0:
+            return
+
+        # stochastic application of difficulty level
+        make_mistake = self.should_ai_make_mistake(self.difficulty.ai_efficiency_percent)
+        if not make_mistake:
+            paddle.move(up=move_dir == 1)
 
     def update(self) -> int:
         """

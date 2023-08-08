@@ -342,8 +342,8 @@ def draw(_win, _session: ClientSession, _paused: bool, _home_buttons):
                     _self_name = get_self_name_status(_session.player_name)
                     _enemy_name = get_ai_name_status(_session.difficulty.ai_efficiency_percent)
                 else:
-                    _self_name = OFFLINE_MULTIPLAYER_PLAYER1_NAME
-                    _enemy_name = OFFLINE_MULTIPLAYER_PLAYER2_NAME
+                    _self_name = OFFLINE_MULTI_PLAYER_PLAYER1_NAME
+                    _enemy_name = OFFLINE_MULTI_PLAYER_PLAYER2_NAME
 
                 if self_left:
                     left_name = _self_name

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6765a952-7679-4c13-b185-abe1076a5945" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DifficultyLevel.py" beforeDir="false" afterPath="$PROJECT_DIR$/DifficultyLevel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameMode.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameMode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameState.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameState.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/R.py" beforeDir="false" afterPath="$PROJECT_DIR$/R.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U.py" beforeDir="false" afterPath="$PROJECT_DIR$/U.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/local_config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/local_config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pong_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/pong_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sound/button_click.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sound/button_click.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
       <recent name="D:\RC\Projects\Pycharm\PingPong\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pong_server">
+  <component name="RunManager" selected="Python.pong_client">
     <configuration name="pong_client" type="PythonConfigurationType" factoryName="Python" singleton="false" nameIsGenerated="true">
       <module name="PingPong" />
       <option name="INTERPRETER_OPTIONS" value="" />

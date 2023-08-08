@@ -49,6 +49,9 @@ This command uses `config/client_net_config.ini` as a fallback in case the serve
 ## Demo
 Youtube: https://youtu.be/KYO4i3YMgJk
 
+## See Also
+Sudoku Game with solver: https://github.com/ChauhanRohan-RC/Sudoku
+
 ## Social Media
 Twitter: https://twitter.com/0rc_studio
 Youtube: https://www.youtube.com/channel/UCmyvutGWtyBRva_jrZfyORA
