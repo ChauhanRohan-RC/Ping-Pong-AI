@@ -507,38 +507,6 @@ class GameState:
             cls._s_rand_err_choice_index = 0  # reset
         return choice > ai_efficiency_percent
 
-    # def ai_handle_player(self, left: bool):
-    #     paddle = self.get_paddle(left)
-    #     # enemy = self.get_paddle(not left)
-    #
-    #     tu = line_line_intersection(to_abs(paddle.relx), to_abs(paddle.rely), to_abs(paddle.relx2), to_abs(paddle.rely2),
-    #                                 to_abs(self.ball.relx), to_abs(self.ball.rely),
-    #                                 to_abs(self.ball.relx + self.ball.rel_velx),
-    #                                 to_abs(self.ball.rely + self.ball.rel_vely), False, False)
-    #
-    #     # print(f"AI intersections: {tu}")
-    #     if tu and tu[1] > 0:  # if ball is directly heading towards paddle
-    #         collision_point_y = int(lerp(to_abs(paddle.rely), to_abs(paddle.rely2), tu[0]))
-    #         center_y = to_abs(paddle.center_rely)
-    #         dy = collision_point_y - center_y
-    #         if abs(dy) > to_abs((paddle.rel_height / 2) - paddle.rel_vel):
-    #             move_up = dy < 0
-    #             # i = random.choices(range(1, 101))            # todo amp error probability
-    #             # make_mistake = i <= self.difficulty.ai_error_probability
-    #             #
-    #             # # Strategy 1 (do not move at all)
-    #             # if not make_mistake:
-    #             #     paddle.move(up=move_up)
-    #             #
-    #             # # # Strategy 2 (move in opposite direction)
-    #             # # if make_mistake:
-    #             # #     move_up = not move_up
-    #             # # paddle.move(up=move_up)
-    #
-    #             make_mistake = self.should_ai_make_mistake(self.difficulty.ai_efficiency_percent)
-    #             if not make_mistake:
-    #                 paddle.move(up=move_up)
-
     def ai_handle_player(self, left: bool):
         paddle = self.get_paddle(left)
         # enemy = self.get_paddle(not left)

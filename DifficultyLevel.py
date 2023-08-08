@@ -54,28 +54,28 @@ DIFFICULTY_LEVEL_EASY = DifficultyLevel(_id=0xAAA0, key="EASY", display_name="Ea
                                         paddle_rel_width=0.0087, paddle_rel_height=0.138, paddle_rel_vel=0.0095,
                                         ball_rel_radius=0.01, ball_rel_vel_max_component=0.00725,
                                         ball_reset_delay_secs=2.5, ball_random_initial_vel_enabled=True,
-                                        ball_x_vel_min_factor=0.88,
+                                        ball_x_vel_min_factor=0.89,
                                         winning_socre=3, default_ai_efficiency_percent=20)
 
 DIFFICULTY_LEVEL_NORMAL = DifficultyLevel(_id=0xAAA1, key="NORMAL", display_name="Normal",
                                           paddle_rel_width=0.00875, paddle_rel_height=0.11875, paddle_rel_vel=0.0098,
                                           ball_rel_radius=0.008, ball_rel_vel_max_component=0.00755,
                                           ball_reset_delay_secs=2, ball_random_initial_vel_enabled=True,
-                                          ball_x_vel_min_factor=0.825,
+                                          ball_x_vel_min_factor=0.86,
                                           winning_socre=5, default_ai_efficiency_percent=40)
 
 DIFFICULTY_LEVEL_HARD = DifficultyLevel(_id=0xAAA2, key="HARD", display_name="Hard",
                                         paddle_rel_width=0.009, paddle_rel_height=0.1, paddle_rel_vel=0.011,
                                         ball_rel_radius=0.008, ball_rel_vel_max_component=0.0088,
                                         ball_reset_delay_secs=1.5, ball_random_initial_vel_enabled=True,
-                                        ball_x_vel_min_factor=0.79,
+                                        ball_x_vel_min_factor=0.82,
                                         winning_socre=10, default_ai_efficiency_percent=60)
 
 DIFFICULTY_LEVEL_EXPERT = DifficultyLevel(_id=0xAAA3, key="EXPERT", display_name="Expert",
                                           paddle_rel_width=0.01125, paddle_rel_height=0.0925, paddle_rel_vel=0.014,
                                           ball_rel_radius=0.0072, ball_rel_vel_max_component=0.0098,
                                           ball_reset_delay_secs=1, ball_random_initial_vel_enabled=True,
-                                          ball_x_vel_min_factor=0.74,
+                                          ball_x_vel_min_factor=0.8,
                                           winning_socre=10, default_ai_efficiency_percent=85)
 
 DIFFICULTY_LEVEL_DEFAULT = DIFFICULTY_LEVEL_NORMAL
