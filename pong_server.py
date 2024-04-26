@@ -1,3 +1,4 @@
+import socket
 import sys
 
 import pygame
@@ -14,8 +15,8 @@ print("\n")
 
 sessions = []
 
-server_ip = DEFAULT_SERVER_IP
-server_port = DEFAULT_SERVER_PORT
+server_ip: str = DEFAULT_SERVER_IP
+server_port: int = DEFAULT_SERVER_PORT
 
 if len(sys.argv) > 1:
     _ip = sys.argv[1]
@@ -30,7 +31,7 @@ if len(sys.argv) > 2:
     except ValueError:
         print(f"Invalid input port: {sys.argv[2]}")
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 try:
     sock.bind((server_ip, server_port))
@@ -51,15 +52,13 @@ except Exception as e:
 
 if SERVER_TIMEOUT_SECS > 0:
     sock.settimeout(SERVER_TIMEOUT_SECS)
-print(f"Server UP -> IP: {DEFAULT_SERVER_IP}, PORT: {DEFAULT_SERVER_PORT}")
+print(f"Server UP -> IP: {server_ip}, PORT: {server_port}")
 
 pygame.init()
-win = pygame.Surface((DEFAULT_W_WIDTH, DEFAULT_W_HEIGHT))       # dummy window
-
+win: pygame.Surface = pygame.Surface((DEFAULT_W_WIDTH, DEFAULT_W_HEIGHT))       # dummy window
 
 def get_win():
     global win
-
     return win
 
 
